@@ -1,1 +1,38 @@
 /* Criar um style só para global? */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    height: 100%;
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar{
+    background-color: lightblue;
+    width: 14%;
+    padding: 80px 40px;
+    height: 100%;
+}
+
+.user-header{
+    display: flex;
+    align-items: center;
+}
+
+.user-header img {
+    width: 65px;
+    border-radius: 100%;
+}
+
+.user-hello{
+    margin-left: 10px;
+}
+
+div.main-content{
+    width: 80%;
+    padding: 80px 20px;
+}
+

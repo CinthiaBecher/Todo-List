@@ -5,10 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do List</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/app.js"></script>
+    <!--STYLE-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--FONT-AWESOME-->
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+    />
+
+    <!--SCRIPT (Defer is used so html is loaded before js)-->
+    <script src="js/app.js" defer></script> 
 </head>
 <body>
+    <div class="sidebar">
+        <div class="user-header">
+
+            <img src="images/user-photo.png" class="user-photo" alt="Smiling blondie woman">
+
+            <div class="user-hello">
+                <h4>Hello,</h4>
+                <h2 class="user-name">Cinthia</h2>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="main-content">
+
+        <header>
+            <h1>To do List</h1>
+        </header>
+
+        <div>
+
+            <form id="todo-from">
+                <p>Add new task</p>
+                <div class="form-control">
+                    <input type="text" id="todo-input" placeholder="What you need to do?">
+                    <button type="submit">
+                        <i class="fa-thin fa-plus"></i>
+                    </button>
+                </div>
+            </form>
+
+            <form action="" id="edit-from">
+                <p>Edit your task</p>
+                <div class="form-control">
+                    <input type="text" id="edit-input">
+                    <button type="submit">
+                        <i class="fa-solid fa-check-double"></i>
+                    </button>
+                    <button id="cancel-edit-btn">
+                        Cancel
+                    </button>
+
+            </form>
+        </div>
+
+        <div class="toolbar">
+            <div class="filters"></div>
+            <div class="search">
+                <form action="">
+                    <input type="text" id="search-input" placeholder="Search">
+                    <button id="erase-button">
+                        <i class="fa-solid fa-delete-left"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
     
 </body>
 </html>
