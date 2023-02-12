@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do List</title>
-    <!--STYLE-->
+    <!------- STYLE ------->
     <link rel="stylesheet" href="css/styles.css">
 
     <!--FONT-AWESOME-->
@@ -21,33 +21,59 @@
     <script src="js/app.js" defer></script> 
 </head>
 <body>
+    <!-- -------------- SIDEBAR -------------- -->
     <div class="sidebar">
-        <div class="user-header">
+        <div class="sidebar-content">
+            <div class="user-header">
 
-            <img src="images/user-photo.png" class="user-photo" alt="Smiling blondie woman">
+                <img src="images/user-photo.png" class="user-photo" alt="Smiling blondie woman">
 
-            <div class="user-hello">
-                <h4>Hello,</h4>
-                <h2 class="user-name">Cinthia</h2>
+                <div class="user-hello">
+                    <h4>Hello,</h4>
+                    <h2 class="user-name">Cinthia</h2>
+                </div>
+
             </div>
-
         </div>
     </div>
     
+    <!-- -------------- MAIN CONTENT -------------- -->
+
     <div class="main-content">
 
         <header>
             <h1>To do List</h1>
+
+            <div id="toolbar">
+
+                <div id="filters">
+                    <select id="filter-select">
+                        <option value="all">All</option>
+                        <option value="todo">To do</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+
+                <div id="search">
+                    <form action="">
+                        <input type="text" id="search-input" placeholder="Search">
+                        <button id="erase-button">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
         </header>
 
-        <div>
+        <ßdiv class="actions">
 
             <form id="todo-from">
-                <p>Add new task</p>
                 <div class="form-control">
                     <input type="text" id="todo-input" placeholder="What you need to do?">
                     <button type="submit">
                         <i class="fa-thin fa-plus"></i>
+                        Add new task
                     </button>
                 </div>
             </form>
@@ -66,17 +92,47 @@
             </form>
         </div>
 
-        <div class="toolbar">
-            <div class="filters"></div>
-            <div class="search">
-                <form action="">
-                    <input type="text" id="search-input" placeholder="Search">
-                    <button id="erase-button">
-                        <i class="fa-solid fa-delete-left"></i>
-                    </button>
-                </form>
+        <!--TOOLBAR FOI LA PRO LADO DO TÍTULO-->
+
+        <!-- ------------- TO DO LIST -------------- -->
+        <div class="todo-list" id="todo-input">
+            <div class="task">
+
+                <button class="finish-todo">
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+                <h3>Task name etc etc...</h3>
+
+                <button class="edit-todo">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+
+                <button class="remove-todo">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                
             </div>
 
+            <div class="task">
+
+                <button class="finish-todo">
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+                <h3>Task name etc etc...</h3>
+
+                <button class="edit-todo">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+
+                <button class="remove-todo">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                
+            </div>
+
+            
         </div>
     </div>
     

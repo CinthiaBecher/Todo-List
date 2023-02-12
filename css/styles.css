@@ -1,7 +1,37 @@
-/* Criar um style só para global? */
+/*----GOOGLE FONTS----*/
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
+/*===================== VARIANTS =====================*/
+:root{ 
+    /*----COLORS---*/
+    --first-color: #312573;
+    --first-color-second: #C9C3EB ;
+    --text-color: #1C1643;
+    --text-color-second: #7665E4;
+    --text-color-lighter: #F9F8FD;
+    --body-color: #F9F8FD;
+
+    /*----TYPOGRAPHY---*/
+    --body-font:'Inter Tight', sans-serif;
+
+    --h1-font-size: 32px;
+    --h2-font-size: 24px;
+    --h3-font-size: 20px;
+    --h4-font-size: 18px;
+    --normal-font-size: 16px;
+    --small-font-size: 14px;
+    --smaller-font-size: 12px;
+
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+}
+
+/* =====================  GENERAL =====================  */
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 body{
@@ -9,12 +39,22 @@ body{
     height: 100%;
 }
 
-/* ---------- SIDEBAR ---------- */
+button, input, select {
+    font-size: var(--small-font-size);
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+
+/* =====================  SIDEBAR =====================  */
 .sidebar{
     background-color: lightblue;
-    width: 14%;
-    padding: 80px 40px;
+    width: 250px;
+    position: fixed ;
     height: 100%;
+}
+
+.sidebar-content{
+    padding: 80px 40px;
 }
 
 .user-header{
@@ -31,8 +71,44 @@ body{
     margin-left: 10px;
 }
 
+/* ===================== MAIN CONTENT ===================== */
+
 div.main-content{
-    width: 80%;
-    padding: 80px 20px;
+    margin-left: 250px;
+    padding: 80px 135px;
+    width: 100%;
 }
 
+.main-content header{
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 16px 0px;
+
+    border-bottom: 0.5px solid #989898;
+}
+
+header #toolbar{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+#search input{
+
+}
+
+#search button{
+
+}
+
+#filter select{
+
+}
+
+.main-content .actions{
+    margin: 48px 115px;
+}
