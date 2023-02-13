@@ -112,3 +112,37 @@ header #toolbar{
 .main-content .actions{
     margin: 48px 115px;
 }
+
+.main-content .form-control{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.addNewTask input{
+    width: 75%;
+}
+
+.addNewTask button{
+    width: 25%;
+}
+/*---- TASKS ---*/
+.task{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 11px 20px;
+}
+
+.task .check-name{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+.task .controls{
+
+}
