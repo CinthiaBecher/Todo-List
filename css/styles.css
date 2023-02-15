@@ -37,6 +37,8 @@
 body{
     display: flex;
     height: 100%;
+    background-color: var(--body-color);
+
 }
 
 button, input, select {
@@ -45,9 +47,31 @@ button, input, select {
     border-radius: 10px;
 }
 
+input, select{
+    border: 1.5px solid var(--first-color-second);
+}
+
+select{
+    width: 120px;
+}
+
+input::placeholder{
+    color: var(--text-color-second);
+}
+
+.default-button{
+    background-color: var(--first-color);
+    color: #FFFFFF;
+}
+
+icon-button {
+    pointer-events: none;
+}
 /* =====================  SIDEBAR =====================  */
 .sidebar{
-    background-color: lightblue;
+    background-image: url(../images/SideBarBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 250px;
     position: fixed ;
     height: 100%;
@@ -71,16 +95,30 @@ button, input, select {
     margin-left: 10px;
 }
 
+.user-hello h4{
+    font-size: var(--normal-font-size);
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.user-hello h2{
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--text-color);
+}
+
 /* ===================== MAIN CONTENT ===================== */
 
 div.main-content{
     margin-left: 250px;
-    padding: 80px 135px;
+    padding: 0px 135px;
     width: 100%;
+    height: 100%;
 }
 
 .main-content header{
     box-sizing: border-box;
+    margin-top: 80px;
     /* Auto layout */
     display: flex;
     flex-direction: row;
@@ -98,16 +136,9 @@ header #toolbar{
 }
 
 #search input{
-
+    border: 1.5px solid var(--first-color-second);
 }
 
-#search button{
-
-}
-
-#filter select{
-
-}
 
 .main-content .actions{
     margin: 48px 115px;
@@ -129,20 +160,82 @@ header #toolbar{
 .addNewTask button{
     width: 25%;
 }
+
+
 /*---- TASKS ---*/
+
 .task{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 11px 20px;
+    margin-bottom: 20px;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(217, 217, 217, 0.3);
+    border-radius: 14px;
 }
 
 .task .check-name{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
 }
-.task .controls{
 
+.check-name button{
+    padding: 5px;
+    border: 1px solid #989898;
+    border-radius: 13px;
+    background-color: #F9F8FD;
+}
+
+.check-name i {
+    padding: 0 0.5px;
+    color: #F9F8FD;
+}
+
+.check-name h3{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+
+}
+
+.task .controls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-controls button{
+    border: none;
+    background-color: transparent;
+}
+
+.task-controls  i{
+    color: var(--text-color);
+}
+
+/*-- DONE --*/
+.done{
+    background-color: #f4f4f4;
+}
+
+.done h3{
+    text-decoration: line-through;
+    font-style: italic;
+    color: #7A7A7A;
+}
+.done i {
+    color: #7A7A7A;
+}
+
+.done .check-name i {
+    color: var(--text-color);
+}
+
+/* ================= HIDE ================= */
+.hide{
+    display: none;
 }
