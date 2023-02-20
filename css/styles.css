@@ -80,6 +80,7 @@ i{
     background-image: url(../images/SideBarBackground.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom;
     width: 250px;
     position: fixed ;
     height: 100%;
@@ -149,7 +150,8 @@ header #toolbar{
 
 
 .main-content .actions{
-    margin: 48px 115px;
+    width: 84%;
+    margin: 48px auto;
 }
 
 .main-content .form-control{
