@@ -43,7 +43,7 @@ body{
 
 button, input, select {
     font-size: var(--small-font-size);
-    padding: 8px 15px;
+    padding: 8px 20px;
     border-radius: 10px;
 }
 
