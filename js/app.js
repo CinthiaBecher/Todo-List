@@ -18,12 +18,8 @@ const saveTodo = taskName => {
 
     const finishTodo = document.createElement('button');
     finishTodo.classList.add("finish-todo");
+    finishTodo.innerHTML = '<i class="fa-solid fa-check"></i>'
     checkName.appendChild(finishTodo);
-
-    const checkIconBtn = document.createElement('i');
-    checkIconBtn.classList.add("fa-solid");
-    checkIconBtn.classList.add("fa-check");
-    finishTodo.appendChild(checkIconBtn)
 
     const todoTitle = document.createElement('h3');
     todoTitle.innerText = taskName;
@@ -36,53 +32,18 @@ const saveTodo = taskName => {
 
     const editTodo = document.createElement('button');
     editTodo.classList.add("edit-todo");
+    editTodo.innerHTML = '<i class="fa-solid fa-pen"></i>'
     controls.appendChild(editTodo);
 
     const removeTodo = document.createElement('button');
     removeTodo.classList.add("remove-todo");
+    removeTodo.innerHTML = '<i class="fa-solid fa-trash"></i>'
     controls.appendChild(removeTodo);
-    
-    const editIconBtn = document.createElement('i');
-    editIconBtn.classList.add("fa-solid");
-    editIconBtn.classList.add("fa-pen");
-    editTodo.appendChild(editIconBtn);
 
-    const removeIconBtn = document.createElement('i');
-    removeIconBtn.classList.add("fa-solid");
-    removeIconBtn.classList.add("fa-trash");
-    removeTodo.appendChild(removeIconBtn);
+    todoList.appendChild(task);
 
-
-
-    
-    console.log(task);
-
-
- 
-
-/*
-    <div class="task">
-
-                <div class="check-name">
-                    <button class="finish-todo">
-                        <i class="fa-solid fa-check"></i>
-                    </button>
-
-                    <h3>Task name etc etc...</h3>
-                </div>
-
-                <div class="controls task-controls">
-                    <button class="edit-todo">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-
-                    <button class="remove-todo">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                
-            </div>
-*/
+    todoInput.value = "";
+    todoInput.focus();
 }
 
 
@@ -95,4 +56,27 @@ todoForm.addEventListener("submit", (e) => {
     const inputValue = todoInput.value //getting the task name
 
     if (inputValue) saveTodo(inputValue)
+})
+
+/* Listen event for every button and call the respective action */
+document.addEventListener("click", (e) => {
+    const targetEl = e.target;
+    const parentEl = targetEl.closest(".task");
+
+    console.log(targetEl);
+
+    if(targetEl.classList.contains('finish-todo')){
+        console.log('Finish TODO');
+        parentEl.classList.toggle("done");
+    }
+    else if(targetEl.classList.contains('remove-todo')){
+        //TO-DO: add a confirmation button
+        console.log('Remove TODO');
+        parentEl.remove();
+    }
+    else if(targetEl.classList.contains('edit-todo')){
+        console.log('Edit TODO');
+    }
+
+
 })
