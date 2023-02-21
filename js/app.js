@@ -4,7 +4,9 @@ const todoInput = document.querySelector('#todo-input');
 const todoList = document.querySelector('#todo-list');
 const editForm = document.querySelector('#edit-form');
 const editInput = document.querySelector('#edit-input');
-const cancelEdit = document.querySelector('#ancel-edit-btn');
+const cancelEdit = document.querySelector('#cancel-edit-btn');
+
+let oldInputTitleValue;
 
 //Functions
 const saveTodo = taskName => {
@@ -46,6 +48,39 @@ const saveTodo = taskName => {
     todoInput.focus();
 }
 
+//editing a task
+const toggleEdit = () => {
+    editForm.classList.toggle('hide');
+    todoForm.classList.toggle('hide');
+    todoList.classList.toggle('hide');
+}
+
+const updateTask = (text) => {
+    const tasks = document.querySelectorAll('.task');
+    console.log(tasks)
+
+    tasks.forEach((task) => {
+        let taskTitle = task.querySelector("h3")
+        if (taskTitle.innerText === oldInputTitleValue){
+            //TODO: se tem mais de uma task igual ele troca todos 
+            taskTitle.innerText = text
+        }
+        
+    })
+}
+
+//if there's not any new task
+//  Ready to be productive? Add your tasks and take Control of Your Day 
+//  Start to organize Your Life in Minutes
+//  Let's get started! Add your first task now.
+//  Your to-do list is empty. Time to add your first task!
+
+
+//if all the tasks are checked
+//  Looks like you've tackled everything. Nice job!
+//  You're up to date. Use this time to focus on something else.
+//  Nothing left on your to-do list! Take a moment to relax and recharge.
+//  All caught up! Take a break and recharge.
 
 //Events
 
@@ -63,20 +98,53 @@ document.addEventListener("click", (e) => {
     const targetEl = e.target;
     const parentEl = targetEl.closest(".task");
 
-    console.log(targetEl);
+    let taskTitle;
+    if(parentEl && parentEl.querySelector("h3")){
+        taskTitle = parentEl.querySelector("h3").innerText;
+        console.log(taskTitle);
+    }
+
+    //console.log(targetEl);
 
     if(targetEl.classList.contains('finish-todo')){
-        console.log('Finish TODO');
+        //console.log('Finish TODO');
         parentEl.classList.toggle("done");
     }
     else if(targetEl.classList.contains('remove-todo')){
         //TO-DO: add a confirmation button
-        console.log('Remove TODO');
+        //console.log('Remove TODO');
         parentEl.remove();
+
     }
     else if(targetEl.classList.contains('edit-todo')){
         console.log('Edit TODO');
+        toggleEdit();
+
+        editInput.value = taskTitle;
+        oldInputTitleValue = taskTitle;
     }
 
 
+});
+
+//edit form
+cancelEdit.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    toggleEdit();
 })
+
+editForm.addEventListener("submit", (e) =>{
+    e.preventDefault();
+
+    const editInputValue = editInput.value;
+
+    if(editInputValue){
+        //update
+        console.log('update todo ' + editInputValue )
+        updateTask(editInputValue);
+    }
+
+    toggleEdit();
+})
+
