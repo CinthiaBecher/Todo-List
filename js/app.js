@@ -113,7 +113,11 @@ document.addEventListener("click", (e) => {
     else if(targetEl.classList.contains('remove-todo')){
         //TO-DO: add a confirmation button
         //console.log('Remove TODO');
-        parentEl.remove();
+        if(!confirm('Are you sure?')) {
+            e.preventDefault();
+        }else{
+            parentEl.remove();
+        }
 
     }
     else if(targetEl.classList.contains('edit-todo')){
