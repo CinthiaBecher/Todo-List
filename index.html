@@ -46,12 +46,11 @@
 
             <div id="toolbar">
 
-                <div id="filters">
-                    <select id="filter-select">
-                        <option value="all">All</option>
-                        <option value="todo">To do</option>
-                        <option value="done">Done</option>
-                    </select>
+                <div class="filters">
+                    <button class="showAll active" onclick="filterTasks('showAll')">Show All</button>
+                    <button class="todo" onclick="filterTasks('todo')">To Do</button>
+                    <button class="done" onclick="filterTasks('done')">Done</button>
+                    
                 </div>
 
                 <div id="search">
@@ -99,7 +98,7 @@
 
         <!-- ------------- TO DO LIST -------------- -->
         <div id="todo-list">
-            <div class="task">
+            <div class="task todo">
 
                 <div class="check-name">
                     <button class="finish-todo">
@@ -121,7 +120,7 @@
                 
             </div>
 
-            <div class="task">
+            <div class="task todo">
 
                 <div class="check-name">
                     <button class="finish-todo">

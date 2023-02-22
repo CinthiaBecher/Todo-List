@@ -1,3 +1,10 @@
+/* TO DO LIST
+ * [ ] Show message when there is no tasks (random?)
+ * [ ] Show message when all tasks were finished (random?)
+ * [ ] Search function
+ *
+ */ 
+
 // Selecting elements
 const todoForm = document.querySelector('#todo-form');
 const todoInput = document.querySelector('#todo-input');
@@ -5,14 +12,18 @@ const todoList = document.querySelector('#todo-list');
 const editForm = document.querySelector('#edit-form');
 const editInput = document.querySelector('#edit-input');
 const cancelEdit = document.querySelector('#cancel-edit-btn');
+const filters = document.querySelector('.filters');
 
 let oldInputTitleValue;
 
 //Functions
+//save new todo
 const saveTodo = taskName => {
 
     const task = document.createElement('div');
     task.classList.add("task");
+    task.classList.add("todo");
+    
 
     const checkName = document.createElement('div');
     checkName.classList.add("check-name")
@@ -55,6 +66,7 @@ const toggleEdit = () => {
     todoList.classList.toggle('hide');
 }
 
+//update task name
 const updateTask = (text) => {
     const tasks = document.querySelectorAll('.task');
     console.log(tasks)
@@ -69,6 +81,16 @@ const updateTask = (text) => {
     })
 }
 
+
+//filter tasks
+const filterTasks = (filter) => {
+    filter = '.'.concat(filter)
+    console.log(filter);
+    const button = filters.querySelector(filter);
+    console.log(button)
+    button.classList.toggle('active')
+    console.log(button)
+}
 //if there's not any new task
 //  Ready to be productive? Add your tasks and take Control of Your Day 
 //  Start to organize Your Life in Minutes
@@ -109,9 +131,9 @@ document.addEventListener("click", (e) => {
     if(targetEl.classList.contains('finish-todo')){
         //console.log('Finish TODO');
         parentEl.classList.toggle("done");
+        parentEl.classList.toggle("todo");
     }
     else if(targetEl.classList.contains('remove-todo')){
-        //TO-DO: add a confirmation button
         //console.log('Remove TODO');
         if(!confirm('Are you sure?')) {
             e.preventDefault();

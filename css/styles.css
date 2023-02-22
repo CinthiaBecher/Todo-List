@@ -1,3 +1,9 @@
+/* TO DO LIST
+ * [ ] Add hover style
+ *
+ *
+ *
+ */ 
 /*----GOOGLE FONTS----*/
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 
@@ -45,6 +51,7 @@ button, input, select {
     font-size: var(--small-font-size);
     padding: 8px 15px;
     border-radius: 10px;
+    border: none;
 }
 
 input, select{
@@ -141,7 +148,23 @@ div.main-content{
 header #toolbar{
     display: flex;
     flex-direction: row;
+    align-items: baseline;
     gap: 12px;
+}
+
+.filters{
+    display: inline;
+}
+
+.filters button{
+    border: none;
+    font-size: var(--smaller-font-size);
+    color: #7665E4;
+}
+
+.filters .active{
+    background-color: #7665E4;
+    color: #FFFFFF;
 }
 
 #search input{
